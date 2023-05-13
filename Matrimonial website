@@ -1,0 +1,25 @@
+Matrimonial website: -
+Prerequisite for the website – 
+1.No of user will login everyday (no. of requests) = 1 million
+2.Request should be addressed by regional language = 4 regions
+3.User will be able to direct message or add her/him once find connection = User will send connection request once accepted they can connect (for security reason)
+4. Assuming the website is specifically for India language should not be the barrier
+
+LLD – Design:   
+                                          north
+                                          
+                                          west
+user - website - database - loadbalancer -           End user profiles
+                                          south
+                                          
+                                          east
+
+Design Description: -
+1.	User will login to website and search for his/her id based on CAST, AGE, Religion, or Job Profile etc.
+2.	The requested query will send to the database to get all the details matching profiles
+3.	Once the data collected it will send to the specific region server and show to the user regional wise data.
+4.	Once the match found user can send the request to the matched profile and connect
+
+Improvisation: -
+1.	To decrease the load time, we can use the regional cache of the last active user 
+every time
